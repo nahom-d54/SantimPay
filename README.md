@@ -18,7 +18,6 @@ pip install santimPay
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. After that free to contribute to this project. Please read the [CONTRIBUTING.md](https://github.com/nahom-d54/SantimPay/blob/main/CONTRIBUTING.md) file for more information.
 
-Please make sure to update tests as appropriate.
 
 ## Run Locally
 
