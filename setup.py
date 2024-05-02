@@ -12,6 +12,7 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
+    url="https://github.com/nahom-d54/SantimPay.git",
     install_requires=[
         "PyJWT==2.8.0",
         "httpx==0.27.0"

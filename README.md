@@ -13,7 +13,25 @@ To use the SantimPay SDK in your project, you need to install it using pip, as i
 ```bash
 pip install santimPay
 ```
+## Usage
+To begin using the SDK, import the `SantimPay` class from the module and instantiate it with your secret key.
+``` python
+from santimPay import SantimPay
+# Replace Your_merchant_id with your mechant_id from santimpay api
 
+# Replace your private key with your own private key by generating it
+
+# Replace test wit boolian value - default = False
+santim_pay = SantimPay('Your_merchant_id', 'Your_private_key', test=False)
+
+```
+### Making Payments
+``` python
+
+response = santim_pay.checkout.create(
+
+)
+```
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. After that free to contribute to this project. Please read the [CONTRIBUTING.md](https://github.com/nahom-d54/SantimPay/blob/main/CONTRIBUTING.md) file for more information.
