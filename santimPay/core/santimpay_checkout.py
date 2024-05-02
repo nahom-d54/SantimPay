@@ -1,4 +1,4 @@
-from ..santimpay_types import *
+from ..types import *
 from ..config import Config
 from ..exceptions.santimpay_exceptions import *
 import jwt as JWT

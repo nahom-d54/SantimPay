@@ -1,7 +1,7 @@
-from ...santimpay_types import SantimPayOptions
+from ...types import SantimPayOptions
 from ...config import Config
 from ...exceptions.santimpay_exceptions import *
-from ...santimpay_types import *
+from ...types import *
 import jwt as JWT
 from time import time
 
