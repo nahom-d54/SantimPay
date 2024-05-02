@@ -1,4 +1,4 @@
-# Contributing to Chapa
+# Contributing to SantimPay
 
 👍🎉 First off, thanks for taking the time to contribute! 👍🎉
 
