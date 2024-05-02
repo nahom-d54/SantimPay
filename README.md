@@ -26,11 +26,58 @@ santim_pay = SantimPay('Your_merchant_id', 'Your_private_key', test=False)
 
 ```
 ### Making Payments
+#### Checkout pay
 ``` python
+from santimPay.types import SantimPayCheckoutRequest, SantimPayOptions
 
-response = santim_pay.checkout.create(
-
+request = SantimPayCheckoutRequest(
+    id,
+    amount,
+    paymentReason,
+    successRedirectUrl,
+    failureRedirectUrl,
+    notifyUrl,
+    cancelRedirectUrl,
+    direct = False
 )
+
+# options = SantimPayOptions()
+response = santim_pay.checkout.create(
+    request
+)
+
+print(response.jsonSerialize())
+```
+
+#### Direct pay
+``` python
+from santimPay.types import SantimPayCheckoutRequest, SantimPayOptions
+
+request = SantimPayCheckoutRequest(
+    id,
+    amount,
+    paymentReason,
+    successRedirectUrl,
+    failureRedirectUrl,
+    notifyUrl,
+    cancelRedirectUrl,
+    direct = False
+)
+
+# options = SantimPayOptions()
+
+# replace phonne_number with actual phone number
+response = santim_pay.directpay.telebirr.create(
+    request,
+    phone_number
+)
+# or
+response = santim_pay.directpay.cbe.create(
+    request,
+    phone_number
+)
+
+print(response.jsonSerialize())
 ```
 ## Contributing
 
