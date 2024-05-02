@@ -1,5 +1,5 @@
 from ..santimpay_types import *
-from ..main import SantimPay
+from ..config import Config
 from ..exceptions.santimpay_exceptions import *
 import jwt as JWT
 from time import time
@@ -14,7 +14,18 @@ class SantimPayCheckout:
 
     # : SantimPayCheckoutRequest SantimPayOptions -> SantimPayCheckoutResponse
     def create(self, santimPayCheckoutRequest: SantimPayCheckoutRequest ,  option: SantimPayOptions = None) -> SantimPayCheckoutResponse: 
-    
+        """Create checkout
+
+        Args:
+            santimPayCheckoutRequest (SantimPayCheckoutRequest): type of santim pay checkout
+            option (SantimPayOptions, optional): checkout options. Defaults to None.
+
+        Raises:
+            SantimPayNetworkException: _description_
+
+        Returns:
+            SantimPayCheckoutResponse: _description_
+        """
         if option == None:
             option = SantimPayOptions(False)
         
@@ -24,7 +35,7 @@ class SantimPayCheckout:
             body = santimPayCheckoutRequest.jsonSerialize()
             body['merchantId'] =  self.merchant_id
             body['signedToken'] = self.generateSignedToken(santimPayCheckoutRequest.amount, self.merchant_id)
-            response = self.http_client.post(SantimPay.API_VERSION + "/initiate-payment", json=body)
+            response = self.http_client.post(Config.API_VERSION + "/initiate-payment", json=body)
             url = response.text.replace('\u0026', '&')
 
 
