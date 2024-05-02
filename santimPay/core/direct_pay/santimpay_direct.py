@@ -1,5 +1,5 @@
 from ...santimpay_types import SantimPayOptions
-from ...main import SantimPay
+from ...config import Config
 from ...exceptions.santimpay_exceptions import *
 from ...santimpay_types import *
 import jwt as JWT
@@ -29,7 +29,7 @@ class SantimPayDirect:
             body['merchantId'] = self.merchant_id
             body['signedToken'] = self.generateSignedToken(santimPayCheckoutRequest.amount, santimPayCheckoutRequest.paymentReason, self.payment_method, phone)
             
-            response = self.http_client.post(SantimPay.API_VERSION + "/direct-payment", json=body)
+            response = self.http_client.post(Config.API_VERSION + "/direct-payment", json=body)
             url = response.text.replace('\u0026', '&')
 
         
