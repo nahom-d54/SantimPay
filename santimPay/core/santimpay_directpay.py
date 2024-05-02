@@ -1,4 +1,4 @@
-from core.direct_pay.santimpay_direct import SantimPayDirect
+from .direct_pay.santimpay_direct import SantimPayDirect
 
 class SantimPayDirectPay:
 
